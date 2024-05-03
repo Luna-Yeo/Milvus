@@ -1,0 +1,794 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "ITCAvantGardeGothicStd";
+    font-weight: 400;
+    src: url("../fonts/ITCAvantGardeStd-Md.otf") format("opentype");
+}
+@font-face {
+    font-family: "FuturaStd";
+    font-weight: 700;
+    src: url("../fonts/FuturaStd-Book.otf") format("opentype");
+}
+@font-face {
+    font-family: "FuturaStd";
+    font-weight: 300;
+    src: url("../fonts/FuturaStd-Light.otf") format("opentype");
+}
+@font-face {
+    font-family: "FuturaStd";
+    font-weight: 400;
+    src: url("../fonts/FuturaStd-Medium.otf") format("opentype");
+}
+:root {
+    --color-font: #222;
+    --color-main: #f6ab00;
+    --ITC : "ITCAvantGardeGothicStd";
+    --10px : 1.3158vw;
+    --15px : 1.9737vw;
+    --16px : 2.1053vw;
+    --17px : 2.2368vw;
+    --18px : 2.3684vw;
+    --19px : 2.5vw;
+    --20px : 2.6316vw;
+    --22px : 2.8947vw;
+    --28px : 3.6842vw;
+    --30px : 3.9474vw;
+}
+/* 이탤릭 적용 */
+i { font-style: italic; }
+.font-ITC {
+    font-family: var(--ITC);
+    letter-spacing: 1px;
+}
+.mo { display: none; }
+br.break-mo { display: none; }
+
+body {
+    color: var(--font);
+    letter-spacing: -1px;
+}
+article {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+article .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1280px;
+}
+.area {
+    height: 680px;
+    overflow: hidden;
+}
+
+/* main area title 공통 요소 */
+.area .inner {
+    flex-direction: row;
+}
+.area .inner.reverse {
+    flex-direction: row-reverse;
+}
+.area .inner .text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+.area .inner .text .title {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.3em;
+}
+.area .inner .text .sub {
+    font-size: 24px;
+    line-height: 1.45em;
+}
+
+/* 공통 요소 모바일 */
+@media screen and (max-width : 760px) {
+    .pc {
+        display: none;
+    }
+    .mo {
+        display: block;
+    }
+    article .inner {
+        width: 100vw;
+    }
+    .font-light {
+        font-weight: 300;
+    }
+    .font-thin {
+        font-weight: 100;
+    }
+    .text .title strong {
+        font-weight: 700;
+        font-size: 7.8947vw;
+        color: var(--color-main);
+    }
+    .area .inner {
+        gap: 7.7632vw;
+    }
+    .area .inner.reverse {
+        flex-direction: column;
+        gap: 7.7632vw;
+    }
+    .area .inner .text {
+        flex-grow: inherit;
+        text-align: center;
+        gap: 6.3158vw;
+    }
+    .area .inner .text .sub {
+        font-size: 3.1579vw;
+    }
+    .area .inner .text h3.title {
+        font-size: 6.5789vw;
+    }
+
+}
+
+
+/* 페이지 시작 */
+/* .wrap { width: 1770px; } */
+
+/* main 01 영역 */
+.main01 {
+    height: 789px;
+    background: url("../img/main01_bg.jpg") no-repeat center;
+    background-size: cover;
+    color: #fff;
+}
+/* header */
+.main01 header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 43px;
+    width: 100%;
+}
+
+/* 로고 */
+.main01 header h1.logo {
+    width: 98px;
+    height: 28px;
+    display: flex;
+}
+.main01 header h1.logo a {
+    width: 100%;
+    height: 100%;
+    background: url("../img/logo.png") center no-repeat;
+    background-size: 100%;
+}
+
+/* 메뉴 */
+.main01 header .menu {
+    display: flex;
+    justify-content: center;
+}
+.main01 header .menu li {
+    padding-left: 29px;
+    font-size: 14px;
+}
+
+/* main01 핸드폰 이미지/텍스트 영역 */
+.main01 section {
+    display: flex;
+    gap: 37px;
+    padding-top: 99px;
+    width: 100%;
+    position: relative;
+}
+.main01 section .phone {
+    position: absolute;
+    width: 592px;
+}
+.main01 section .text {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 0 0 630px;
+}
+/* 서브 텍스트 */
+.main01 section .text li.sub {
+    font-size: 26px;
+    padding-bottom: 34px;
+    line-height: 1;
+}
+/* 메인 텍스트 */
+.main01 section .text li.main {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding-bottom: 50px;
+}
+.main01 section .text li.main h2 {
+    font-size: 70px;
+    font-weight: 400;
+    color: var(--color-main);
+    letter-spacing: -6px;
+}
+
+.main01 section .text li.main p {
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 1.42em;
+}
+
+/* 앱 다운로드 버튼 */
+.main01 section .text li.app-download {
+    display: flex;
+    gap: 10px;
+}
+.main01 section .text li.app-download a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 169px;
+    height : 60px;
+    border: 2px solid #ffffffd6;
+    border-radius: 4px;
+}
+li.app-download a span {
+    letter-spacing: 0px;
+}
+
+
+/* main 01 모바일 */
+@media screen and (max-width : 760px) {
+    /* main01 */
+    .main01 {
+        height: 164.8684vw;
+        background: url("../img/mo_main01_bg.jpg") no-repeat center;
+    }
+    .main01 header {
+        padding: 0 var(--30px);
+        height: 17.1053vw;
+    }
+    .main01 header h1.logo {
+        margin-top: 4.2105vw;
+        width: 8.8158vw;
+        height: 12.8947vw;
+    }
+    .main01 header h1.logo a {
+        background: url("../img/mo_logo.png") no-repeat center;
+        background-size : 100%;
+    }
+    .main01 header .menu {
+        padding-top: 5.3947vw;
+    }
+    .main01 header .menu li {
+        font-size: var(--22px);
+    }
+
+
+    /* main01 타이틀 영역 */
+    .main01 section {
+        gap: 4.8684vw;
+        align-items: center;
+        flex-direction: column-reverse;
+        padding-top: 5.9211vw;
+    }
+    .main01 section .phone {
+        position: inherit;
+        width: 75.3947vw;
+    }
+    .main01 section .text {
+        align-items: center;
+        padding: 0;
+    }
+
+    .main01 section .text li.sub {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 0;
+        margin-bottom: 8.4211vw;
+        width: 44.2105vw;
+        height: 6.1842vw;
+        border: 0.1316vw solid #fff;
+        border-radius: 3.0263vw;
+        font-size: var(--19px);
+    }
+    .main01 section .text li.main {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: var(--20px);
+        padding-bottom: 8.1579vw;
+    }
+    .main01 section .text li.main h2 {
+        display: flex;
+        gap: var(--10px);
+        font-size: 8.7632vw;
+        color: #fff;
+    }
+    .main01 section .text li.main h2 img {
+        width: 22.3684vw;
+    }
+    .main01 section .text li.main p {
+        font-size: var(--28px);
+    }
+    .main01 section .text li.app-download a {
+        gap : var(--15px);
+        width: 29.0789vw;
+        height: 9.7368vw;
+        border: none;
+        border-radius: inherit;
+        background-size: 100%;
+    }
+    .text li.app-download a.google-play {
+        background: url("../img/mo_google_play_logo.png") center no-repeat;
+    }
+    .text li.app-download a.app-store {
+        background: url("../img/mo_app_store.png") center no-repeat;
+    }
+
+    .main01 section .text li.app-download a img {
+        display: none;
+    }
+    li.app-download a span {
+        display: none;
+    }
+}
+
+
+
+/* main02 */
+.main02 {
+    height: 274px;
+    background-color: var(--color-main);
+    color: #fff;
+}
+.main02 .inner {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 240px;
+}
+.main02 .inner .text {
+    padding-left: 126px;
+    font-size: 30px;
+}
+.main02 .inner ul {
+    display: flex;
+}
+.main02 .inner ul li {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    font-size: 20px;
+}
+.main02 .inner ul li:nth-child(2) {
+    padding : 0 136px 0 158px;
+}
+.main02 .inner ul li .num {
+    font-size: 52px;
+}
+
+/* main 02 모바일 */
+@media  screen and (max-width : 760px) {
+    .main02 {
+        height: 61.0526vw;
+    }
+    .main02 .inner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: normal;
+        gap: 4.4737vw;
+    }
+    .main02 .inner .text {
+        padding-top: 10.2632vw;
+        padding-left: 0;
+        flex-grow: inherit;
+        font-size: 6.5789vw;
+        text-align: center;
+        line-height: 7.3684vw;
+    }
+    .main02 .inner ul {
+        gap : var(--30px);
+    }
+    .main02 .inner ul li {
+        justify-content: center;
+        width: 23.8158vw;
+        height: 23.8158vw;
+        border: 1px solid;
+        border-radius: 50%;
+    }
+    .main02 .inner ul li:nth-child(2) {
+        padding: 0;
+    }
+    .main02 .inner ul li .tit {
+        text-decoration: underline;
+        text-underline-offset : 8px;
+        text-decoration-thickness: 1px;
+        font-size: var(--17px);
+    }
+    .main02 .inner ul li .num {
+        font-size: 6.8421vw;
+        font-family: "FuturaStd";
+        letter-spacing: -1px;
+    }
+}
+
+
+
+
+/* main03 */
+.main03 .inner {
+    padding: 0 110px 0 130px;
+}
+.main03 .inner .app img.pc {
+    transform: translate(0px, 44px);
+}
+
+/* main 03 모바일 */
+@media  screen and (max-width : 760px) {
+    .main03.area {
+        height: 124.6053vw;
+        background-color: #edeef0;
+    }
+    .main03 .inner {
+        padding: 10.5263vw 0 0 0;
+        flex-direction: column;
+    }
+    .main03 .inner .app img.mo {
+        width: 71.0526vw;
+    }
+}
+
+/* main04 */
+.main04 {
+    background-color: #f9f8f7;
+}
+.main04 .inner {
+    gap: 106px;
+    padding: 0 0 0 130px;
+}
+.main04 .inner .app img.pc {
+    transform: translate(0px, 44px);
+}
+
+/* main 04 모바일 */
+@media  screen and (max-width : 760px) {
+    .main04.area {
+        height: 122.8947vw;
+        background-color: #fff;
+    }
+    .main04 .inner {
+        gap: 0;
+        padding: 10.5263vw 0 0 0;
+    }
+    .main04 .inner .app img.mo {
+        width: 71.0526vw;
+    }
+}
+
+/* main05 */
+.main05 {
+    background-color: #f2f0eb;
+}
+.main05 .inner {
+    gap: 106px;
+    padding: 0 82px 0 130px;
+}
+.main05 .inner .app img.pc {
+    transform: translate(0px, 84px);
+}
+
+/* main 05 모바일 */
+@media  screen and (max-width : 760px) {
+    .main05.area {
+        height: 122.6316vw;
+        background-color: #edeef0;
+    }
+    .main05 .inner {
+        flex-direction: column;
+        gap: 7.7632vw;
+        padding: 10.5263vw 0 0 0;
+    }
+    .main05 .inner .text {
+        flex-grow: inherit;
+    }
+    .main05 .inner .app img.mo {
+        width: 73.6842vw;
+    }
+}
+
+
+/* main06 */
+.main06 {
+    height: 687px;
+    background-color: #f9f8f7;
+}
+.main06 .inner {
+    flex-direction: column;
+}
+.main06 .inner h3 {
+    padding: 79px 0 59px;
+    font-size: 30px;
+}
+/* 리뷰 영역 */
+.main06 .inner .review {
+    display: flex;
+    gap: 40px;
+}
+.main06 .inner .review.mo {
+    display: none;
+}
+.main06 .inner .review .item {
+    padding: 31px;
+    width: 343px;
+    height: 421px;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px rgba(0,0,0, .1);
+    border: 2px solid #f0f0f0;
+}
+/* 멤버 프로필 */
+.review .item .mem {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    padding-bottom: 37px;
+}
+.review .item .mem .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.mem .img img {
+    max-width: inherit;
+    width: auto;
+}
+/* 두번째 회원 프로필 */
+.review .item:nth-child(2) .mem .img img {
+    transform: translate(0px, 12px);
+}
+/* 세번째 회원 프로필 */
+.review .item:nth-child(3) .mem .img img {
+    transform: translate(0px, 10px);
+}
+/* 회원 정보 */
+.review .item .mem .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.info .name {
+    font-size: 20px;
+}
+.info .date {
+    font-size: 15px;
+    color: #bbb;
+}
+
+/* 리뷰 내용 */
+.item .review-cont .star-items {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+/* 리뷰 별 */
+.star {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("../img/ico_star.png") center no-repeat;
+}
+.star.fill {
+    background: url("../img/ico_star_fill.png") center no-repeat;
+}
+
+.item .review-cont .star-items {
+    padding-bottom: 19px;
+}
+.item .review-cont .star-items .review-num {
+    padding-left: 6px;
+    font-size: 28px;
+    color: var(--color-main);
+}
+.review-cont p {
+    font-size: 17px;
+    color: #565656;
+    line-height: 1.58em;
+    text-align: left;
+    letter-spacing: -2px;
+}
+
+
+/* main 06 모바일 */
+@media  screen and (max-width : 760px) {
+    .main06.area {
+        height: auto;
+        padding-bottom :10.6579vw;
+        background-color: #fff;
+    }
+    .main06 .inner {
+        gap: 0;
+        padding: 0 var(--20px);
+    }
+    .main06 .inner h3 {
+        padding: 10.6579vw 0 var(--30px);
+        font-size: var(--28px);
+    }
+    .main06 .inner h3 .font-ITC {
+        font-family: "FuturaStd";
+        font-weight: 300;
+    }
+    .main06 .inner .review.pc {
+        display: none;
+    }
+    .main06 .inner .review.mo {
+        display: flex;
+    }
+    .main06 .inner .review {
+        gap: var(--20px);
+        flex-direction: column;
+    }
+    .main06 .inner .review .item {
+        padding: var(--30px);
+        width: 100%;
+        height: auto;
+        border-radius: 1.7105vw;
+        border: 1px solid #f0f0f0;
+        box-shadow: 0.6579vw 0.6579vw 0.6579vw rgba(0,0,0, .07);
+    }
+    .review .item button {
+        width: 100%;
+    }
+    .review .item .mem {
+        justify-content: center;
+        padding-bottom : var(--30px);
+        border-bottom: 1px solid #d3d3d3;
+    }
+    .review .item .mem .img {
+        width: 11.5789vw;
+        height: 11.5789vw;
+    }
+    .review .item .mem .img img {
+        width: 130%;
+    }
+    .review .item .mem .about {
+        display: flex;
+        flex-direction: column;
+        gap: var(--15px);
+    }
+    .review .item .mem .info { 
+        flex-direction: row;
+        align-items: baseline;
+    }
+    .review .item .mem .info .name {
+        font-size: var(--18px);
+        color: #565656;
+    }
+    .review .item .mem .info .date {
+        font-family: "FuturaStd";
+        font-size: 1.9079vw;
+    }
+    .review .item .mem .about .star-items {
+        display: flex;
+        align-items: center;
+        gap: 0.1316vw;
+    }
+    .review .item .mem .about .star-items .star {
+        width: 3.8158vw;
+        height: 3.8158vw;
+        background-size: 100%;
+    }
+    .star.grey {
+        background: url("../img/ico_star_grey.png") center no-repeat;
+    }
+    .review .item .review-cont {
+        padding-top: var(--30px);
+    }
+    .review .item .review-cont p {
+        font-size: var(--18px);
+        letter-spacing: -1px;
+    }
+}
+
+
+
+
+
+
+/* footer */
+footer {
+    height: 252px;
+    background-color: #333;
+}
+footer .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+}
+footer .inner .text {
+    font-size: 33px;
+    font-weight: 300;
+    color: var(--color-main);
+    flex-grow: inherit;
+    padding-bottom: 29px;
+}
+footer .inner .cop {
+    display: flex;
+    gap: 32px;
+    padding-bottom: 23px;
+}
+footer .inner .cop li {
+    position : relative;
+    color: #fff;
+    opacity: .35;
+}
+footer .inner .cop li::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -16px;
+    width: 2px;
+    height: 100%;
+    background-color: #fff;
+    opacity: .35;
+}
+footer .inner .cop li:last-child:after {
+    display: none;
+}
+footer .inner .copyright {
+    font-size: 14px;
+    color: #fff;
+    opacity: .35;
+}
+
+
+/* footer 모바일 */
+@media  screen and (max-width : 760px) {
+    footer {
+        height: auto;
+        background-color: #000;
+    }
+    footer .inner {
+        padding: 10.5263vw var(--30px) 10.1316vw;
+    }
+    footer .inner .text {
+        font-size: 4.3421vw;
+        padding-bottom: 3.8158vw;
+    }
+    footer .inner .cop {
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 4.3421vw;
+        row-gap: var(--10px);
+        padding-bottom: 3.4211vw;
+        font-size: var(--16px);
+        letter-spacing: 0px;
+        text-align: center;
+    }
+    footer .inner .cop li:first-child {
+        width: 100%;
+    }
+    footer .inner .cop li:first-child::after {
+        display: none;
+    }
+    footer .inner .copyright {
+        font-size: 1.8421vw;
+        letter-spacing: 0px;
+    }
+    footer .font-ITC {
+        letter-spacing: inherit;
+        font-family: "Noto sans KR";
+    }
+}
+
+
+
+
+
+
